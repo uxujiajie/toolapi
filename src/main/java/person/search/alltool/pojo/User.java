@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Document
-public class User implements Serializable {
+public class User implements Serializable,Comparable<User> {
 
     private static final long serivalVersionUID= -123456789L;
     @MongoId
@@ -40,5 +40,14 @@ public class User implements Serializable {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    @Override
+    public int compareTo(User user) {
+            if (this.getId() >= user.getId() ) {
+                return 1;
+            } else {
+                return -1;
+            }
     }
 }
