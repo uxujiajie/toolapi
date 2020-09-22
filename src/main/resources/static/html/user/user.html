@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>用户页面</title>
+        <script src="/static/jquery.min.js"></script>
+        <script type="application/javascript">
+            function saveUser() {
+                $.post({
+                    url : "./user/save"
+
+                })
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <form action="/user/save" method="post">
+            id: <input name="id" type="number" >
+            <br>
+            用户名: <input name="userName" type="text" >
+            <br>
+            <button type="submit">提交</button>
+        </form>
+    </body>
+</html>
